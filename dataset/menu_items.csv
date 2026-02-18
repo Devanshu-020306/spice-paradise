@@ -1,0 +1,13 @@
+_id,name,description,price,category,orderCount,rating
+1,Margherita Pizza,Classic pizza with tomato mozzarella and basil,12.99,main course,150,4.5
+2,Pepperoni Pizza,Loaded with pepperoni and cheese,14.99,main course,200,4.7
+3,Caesar Salad,Fresh romaine with parmesan and croutons,8.99,appetizers,80,4.3
+4,Garlic Bread,Toasted bread with garlic butter,5.99,appetizers,120,4.6
+5,Spaghetti Carbonara,Creamy pasta with bacon and parmesan,13.99,main course,95,4.4
+6,Chicken Wings,Spicy buffalo wings with ranch,10.99,appetizers,110,4.5
+7,Tiramisu,Classic Italian coffee dessert,6.99,desserts,70,4.8
+8,Chocolate Lava Cake,Warm chocolate cake with molten center,7.99,desserts,85,4.7
+9,Coca Cola,Refreshing soft drink,2.99,beverages,180,4.2
+10,Iced Tea,Fresh brewed iced tea,3.49,beverages,90,4.1
+11,Burger Deluxe,Juicy beef burger with all toppings,11.99,main course,160,4.6
+12,Fish and Chips,Crispy battered fish with fries,13.49,main course,75,4.4
