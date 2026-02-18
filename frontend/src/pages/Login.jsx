@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useStore } from '../store/useStore'
 import Logo from '../components/Logo'
+import { API_URL } from '../config'
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true)
@@ -16,7 +17,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register'
+      const endpoint = isLogin ? `${API_URL}/api/auth/login` : `${API_URL}/api/auth/register`
       const data = isLogin 
         ? { email, password, isAdmin } 
         : { name, email, password, role: isAdmin ? 'admin' : 'user' }

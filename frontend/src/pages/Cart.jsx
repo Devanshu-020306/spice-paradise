@@ -1,6 +1,7 @@
 import { useStore } from '../store/useStore'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { API_URL } from '../config'
 
 export default function Cart() {
   const { cart, updateQuantity, removeFromCart, clearCart, user } = useStore()
@@ -15,7 +16,7 @@ export default function Cart() {
     }
 
     try {
-      await axios.post('/api/orders', {
+      await axios.post(`${API_URL}/api/orders`, {
         items: cart,
         total,
         userId: user._id

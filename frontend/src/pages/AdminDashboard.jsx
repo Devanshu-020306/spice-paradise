@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useStore } from '../store/useStore'
 import { useNavigate } from 'react-router-dom'
+import { API_URL } from '../config'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({ totalOrders: 0, totalRevenue: 0, totalUsers: 0, totalItems: 0 })
@@ -22,8 +23,8 @@ export default function AdminDashboard() {
   const fetchDashboardData = async () => {
     try {
       const [ordersRes, menuRes] = await Promise.all([
-        axios.get('/api/admin/orders'),
-        axios.get('/api/menu')
+        axios.get(`${API_URL}/api/admin/orders`),
+        axios.get(`${API_URL}/api/menu`)
       ])
       
       setOrders(ordersRes.data)
@@ -43,7 +44,7 @@ export default function AdminDashboard() {
 
   const updateOrderStatus = async (orderId, status) => {
     try {
-      await axios.patch(`/api/admin/orders/${orderId}`, { status })
+      await axios.patch(`${API_URL}/api/admin/orders/${orderId}`, { status })
       fetchDashboardData()
     } catch (err) {
       console.error('Error updating order:', err)

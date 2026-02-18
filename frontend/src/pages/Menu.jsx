@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useStore } from '../store/useStore'
+import { API_URL } from '../config'
 
 export default function Menu() {
   const [items, setItems] = useState([])
@@ -15,7 +16,7 @@ export default function Menu() {
 
   const fetchMenu = async () => {
     try {
-      const res = await axios.get('/api/menu')
+      const res = await axios.get(`${API_URL}/api/menu`)
       setItems(res.data)
     } catch (err) {
       console.error('Error fetching menu:', err)
@@ -24,7 +25,7 @@ export default function Menu() {
 
   const fetchRecommendations = async () => {
     try {
-      const res = await axios.get('/api/ml/recommendations')
+      const res = await axios.get(`${API_URL}/api/ml/recommendations`)
       setRecommendations(res.data)
     } catch (err) {
       console.error('Error fetching recommendations:', err)
