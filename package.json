@@ -1,0 +1,17 @@
+{
+  "name": "food-ordering-site",
+  "version": "1.0.0",
+  "description": "Full-stack food ordering platform with ML recommendations",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run ml\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev",
+    "ml": "cd ml-service && python app.py"
+  },
+  "keywords": ["food", "ordering", "restaurant", "ml"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
